@@ -1,0 +1,52 @@
+UID :Abhijeet
+
+PASS :Abhijeet123
+
+
+
+
+
+import xlsxwriter
+from openpyxl import load_workbook
+
+data = [
+    {
+        'name': "Abhijeet",
+        'phone': "8799041573",
+        'email': "abhijet@gmail.com"
+    },
+    {
+        'name': "Ajay",
+        'phone': "3243221573",
+        'email': "ajayt@gmail.com"
+    },
+    {
+        'name': "Ronak",
+        'phone': "4433551573",
+        'email': "ronak@gmail.com"
+    }
+]
+
+workbook = xlsxwriter.Workbook("AllAboutPythonExcel.xlsx")
+worksheet = workbook.add_worksheet("firstsheet")
+
+worksheet.write(0, 0, "#")
+worksheet.write(0, 1, "Name")
+worksheet.write(0, 2, "Phone")
+worksheet.write(0, 3, "Email")
+
+for index, entry in enumerate(data):
+    worksheet.write(index + 1, 0, str(index))
+    worksheet.write(index + 1, 1, entry["name"])
+    worksheet.write(index + 1, 2, entry["phone"])
+    worksheet.write(index + 1, 3, entry["email"])
+
+workbook.close()
+
+workbook_read = load_workbook("AllAboutPythonExcel.xlsx")
+worksheet_read = workbook_read["firstsheet"]
+
+for row in worksheet_read.iter_rows(values_only=True):
+    print(row)
+
+workbook_read.close()

@@ -1,0 +1,306 @@
+<html lang=en>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{
+margin:0; 
+padding:0;
+font-family:'Poppins',sans-serif;
+box-sizing:border-box;
+}
+body{
+background:linear-gradient(#081b29,#000000);
+color:white;
+}
+.header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 0;
+background:transparent;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:5;
+}
+.logo{
+position:relative;
+font-size:25px;
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+.logo ::before{
+content:'';
+position:absolute;
+top:0;
+right:0;
+width:100%;
+height:100%;
+background: linear-gradient(#081b29,#000000);
+animation:showRight 1s ease forwards;
+animation-delay:.4s;
+}
+.navbar a{
+font-size:18px;
+color:white;
+text-decoration:none;
+font-weight:500;
+justify-content: space-around;
+margin-left:35px;
+transition:0.5s;
+}
+.navbar a.active{
+    color: #07ff7b;
+}
+.navbar a:hover{
+color:#00abf0;
+}
+.navbar a.active::before{
+    color:#081b29;   
+}
+.home{
+height:100vh;
+background:url("hacker.png") no-repeat;
+background-size:cover;
+object-fit: cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:0 10%;
+}
+.content{
+max-width:600px;
+}
+.content h1{
+position:relative;
+font-size:56px;
+font-weight:700;
+line-height:1.2;
+z-index: 2;
+}
+.content  h1::before{
+content:'';
+position:absolute;
+top:0;
+right:0;
+width:100%;
+height:100%;
+filter:blur(90px);
+animation:showRight 1s ease forwards;
+animation-delay:1s;
+}
+.content h3{
+position:relative;
+font-size:32px;
+font-weight:700;
+color:#00abf0;
+}
+.content  h3::before{
+content:'';
+position:absolute;
+top:0;
+right:0;
+width:100%;
+height:100%;
+filter:blur(90px);
+animation:showRight 1s ease forwards;
+animation-delay:1.3s;
+}
+.content p{
+position:relative;
+font-size:20px;
+margin:20px 0 40px;
+font-family: monospace;
+}
+.content  p::before{
+content:'';
+position:absolute;
+top:0;
+right:0;
+width:100%;
+height:100%;
+filter:blur(90px);
+animation:showRight 1s ease forwards;
+animation-delay:.6s;
+}
+.content .box{
+position:relative;
+display:flex;
+justify-content:center;
+width:345px;
+height:50px;
+
+}
+.content  .box::before{
+content:'';
+position:absolute;
+top:0;
+right:0;
+width:100%;
+height:100%;
+filter:blur(90px);
+animation:showRight 1s ease forwards;
+animation-delay:.9s;
+z-index:2;
+}
+.box a{
+position:relative;
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:150px;
+height:100%;
+border:2px solid #00abf0;
+border-radius:8px;
+font-size:19px;
+color:#081b29;
+text-decoration:none;
+font-weight:600;
+letter-spacing:1px;
+z-index:1;
+overflow:hidden;
+transition:.5s;
+}
+.box a:hover{
+color:#00abf0;
+
+}
+.box a:nth-child(2) {
+color:#081b29;
+background:#00abf0;
+}
+.box a:nth-child(2):hover{
+background:transparent;
+color:#00abf0;
+
+}
+.box a:nth-child(2)::before{
+background:#081b29;
+}
+.box a::hover{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:100%;
+background:#081b29;
+z-index:-1;
+transition:.5s;
+}
+.box a:hover::before{
+width:100%;
+}
+.imaa{
+position:absolute;
+bottom:40px;
+width:70px;
+display:flex;
+justify-content:space-between;
+}
+.imaa::before{
+content:'';
+position:absolute;
+top:0;
+right:0;
+width:100%;
+height:100%;
+background:linear-gradient(#081b29,#000000);
+animation:showRight 1s ease forwards;
+animation-delay:2.5s;
+}
+.imaa a{
+position:relative;
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:40px;
+height:40px;
+background:transparent;
+border:2px solid #00abf0;
+border-radius:50%;
+font-size:20px;
+color:#00abf0;
+text-decoration:none;
+z-index:1;
+overflow:hidden;
+transition:.3s;
+}
+.imaa a:hover{
+color:#081b29;
+}
+.imaa a::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:100%;
+background:#00abf0;
+z-index:-1;
+transition:.5s;
+}
+.imaa a:hover::before{
+width:100%;
+}
+.bgHome{
+position:absolute;
+top:0;
+right:30px;
+width:500px;
+height:100%;
+background:transparent;
+transition:3s;
+animation:manipActiveHover .1s forwards;
+animation-delay:4s;
+pointer-events:none;
+}
+.bgHome :hover{
+background:#081b29;
+opacity:.8s;
+}
+/* KEYFRAMES ANIMATION */
+@keyframes showRight{
+100%{
+width:0;
+}
+}
+@keyframes manipActiveHover{
+100%{
+pointer-events:auto;
+}
+}
+</style>
+</head>
+<body>
+<header class="header">
+<a href="#" class="logo">CURIEM</a>
+<nav class="navbar">
+<a href="#" class="active">HOME</a>
+<a href="#">SERVICES</a> 
+<a href="#">PORTFOLIO</a>
+<a href="#">CONTACT</a>
+<a href="#">SETTING</a>
+</nav>
+</header>
+<section class="home">
+<div class="content">
+<h1>I'm Abhijeet</h1>
+<h3>WEB DEVELOPER</h3>
+<p>Every challenge is a chance to learn, grow, and innovate. Your skills and dedication will open doors to endless opportunities.</p>
+<div class="box">
+<a href="#">HIRE ME</a>
+<a href="#">LETS TALK</a> 
+</div>
+</div>
+<div class="imaa">
+<a href="https://www.facebook.com/CuriemFF?mibextid=ZbWKwL"><img src="facebook.png" class="Facebook"></i></a>
+<a href="https://www.linkedin.com/in/abhijeet-shrivastav-b403382b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="linkedin.png" class="linkedin"></i></a>
+<a href="https://www.instagram.com/curiem_?igsh=MXVoN2RqbWp4MGN2cQ=="><img src="instagram.png" class="Instagram"></i></a>
+</div>
+<span class="bgHome"></span>
+</section>
+</body>
+</html>
